@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}
+    Index
+{% endblock %}
+
+{% block body %}
+    <img class="img-fluid rounded-circle mx-auto d-block" src="{% static 'images/photo.jpg' %}" alt="icon">
+    <hr>
+<div class="jumbotron">
+<h1>Hello world</h1>
+<p>This is coming from a html page</p>
+<ul>
+    <li>{{name}}</li>
+    <li>{{age}}</li>
+    <li>{{course}}</li>
+
+</ul>
+</div>
+{% endblock %}

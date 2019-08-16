@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>{% block title %}Base{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'testapp/style.css' %}">
+    <link rel="stylesheet" href="{% static 'testapp/bootstrap.min.css' %}">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <div class="navbar-brand"><a href="{%  url 'home' %}">TEST PROJECT COMPANY</a></div>
+    <button class="navbar-toggler" type="button"
+            data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown ">
+                <a href="#" class="nav-link-dropdown-toggle"
+                   id="FormsDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">FORMS</a>
+                <div class="dropdown-menu" aria-labelledby="FormsDropdown">
+                    <a class="nav-link bg-dark" href="{%  url 'form' %}">Html form</a>
+                    <a class="nav-link bg-dark" href="{%  url 'form2' %}">Regular form</a>
+                    <a class="nav-link bg-dark" href="{%  url 'display' %}">Model form</a>
+                </div>
+                <ul class="navbar-nav nav-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'display' %}">data</a>
+                    </li>
+
+                        {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'password_change' %}">Change password</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">{{ request.user.username }}logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">login</a>
+
+
+                    </li>
+                    {% endif %}
+                </ul>
+
+        </ul>
+    </div>
+
+</nav>
+<div class="container">
+    {%if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message }} alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    {% endif %}
+    {% block body %}
+    <p>This is a base template</p>
+</div>
+
+{% endblock %}
+<footer>
+    <p>Dorcas is a girl</p>
+</footer>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>

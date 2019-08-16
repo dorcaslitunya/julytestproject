@@ -1,0 +1,44 @@
+starting a new Django project
+    create a folder(testproject) and open cmd on it
+    issue the following command
+    >django-admin startproject projectName .>
+    RESULTS:
+    testproject/
+        __init__.py>empty file telling py to treat this folder as a python package
+        settings.py
+        urls.py
+        wsgi.py
+
+        THEN issue this command
+       >django-admin startapp appName
+
+ FORM METHODS:GET,POST
+
+ Retrieving data methods
+ #Retrieve all data
+    modelName.objects.all()
+    get_list_or_404(modelName)
+ #Retrieve filtered data
+    modelName.objects.filter(column="sth")
+ #Retrieve one object
+    modelName.objects.get(id=1)
+    //ALTERNATIVELY
+    get_object_or_404(modelName,id)
+
+
+Default user model
+
+    username
+    first_name
+    last_name
+    email
+    password(password1)
+    confirm password(password2)
+
+Custom user registration fields
+    age
+    gender
+
+
+NB//my username=admin
+NB//my password=isika

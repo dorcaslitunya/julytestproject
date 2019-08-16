@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Display{% endblock %}
+
+{%block body%}
+{#<ol>#}
+    {#{% for datum in data %}#}
+      {#  <li>{{ datum.studentName }}</li>#}
+    {#{% endfor %}#}
+
+{#</ol>#}
+
+<table class="table table-responsive">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>studentName</th>
+        <th>Course</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Manage</th>
+    </tr>
+    </thead>
+    <tbody >
+    {% for datum in data %}
+    <tr>
+        <td>{{datum.id}}</td>
+        <td>{{datum.studentName}}</td>
+        <td>{{datum.course}}</td>
+        <td>{{datum.age}}</td>
+        <td>{{datum.email}}</td>
+        <td><a href="{% url 'delete' datum.id %}" class="btn btn-outline-danger
+         btn-sm text-danger" >delete</a>
+            <a href="{% url 'update' datum.id %}" class="btn btn-outline-warning
+                    btn-sm text-warning" >update</a>
+        </td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+
+
+</table>
+{% endblock %}
+

@@ -1,0 +1,56 @@
+input[type = text,input[type = number],input[type = email]
+{
+width:100;
+padding:12px 20px;
+margin:9px 0;
+display:inline-block;
+border;2px solid #c265cc;
+border-radius:5px;
+box-sizing:border-box;
+}
+
+input[type=submit]
+{
+width=100%;
+padding:14px 20px;
+background-color=#c265cc;
+color=white;
+margin=9px 0;
+border=none;
+border-radius:6px;
+cursor:pointer;
+}
+
+form{
+margin-top:2em;
+border:5px dotted green;
+padding:2em;
+border-radius:6px;
+color:white;
+}
+a{
+style="color:white"
+}
+
+
+img
+{
+    height:100px;
+    width:100px;
+    border:20px solid blue !important;
+}
+
+.jumbotron{
+
+    background-color:black !important;
+    color:white;
+    text-align:center;
+}
+footer{
+text-align:center;
+color:white;
+bottom:20px;
+background-color:black;
+padding:5px;
+font-size:15px;
+}

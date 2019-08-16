@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+
+{% block title %} HTML FORM {% endblock %}
+
+{% load static %}
+{% block body %}
+<div class="container">
+
+    <form action="" method="post">
+    {% csrf_token %}
+    <label>Student Name:</label>
+    <input type="text" name="studentName" id="studentName" placeholder="Enter Student Name here"/><br>
+
+    <label>Course:</label>
+    <input type="text" name="course" id="course" placeholder="Enter course here"/><br>
+
+    <label>Age:</label>
+    <input type="number" name="age" id="age" placeholder="Enter Age here"/><br>
+
+    <label>Email:</label>
+    <input type="email" name="email" id="email" placeholder="Enter email here"/><br>
+    <input type="submit" value="Submit data">
+
+</form>
+</div>
+{% endblock %}
+
+
+
+
+
+

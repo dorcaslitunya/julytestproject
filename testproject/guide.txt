@@ -1,0 +1,154 @@
+Starting a new Django project
+    create a folder(testproject) and open cmd on it
+    issue the following command
+    >django-admin startproject projectName .
+    RESULTS:
+        testproject/
+                __init__.py >empty file telling py to treat this folder as a python package
+                settings.py
+                urls.py-where all urls stored here
+                wsgi.py-dont touch until hosting
+                configure before production
+                web server getway interface
+        manage.py-used to interact with project
+        py manage.py startapp appTwo
+py manage.py runserver
+
+
+
+create a folder for templates
+creaye another folder inside template folder and name it the same name as app
+inside app folder create index.html
+
+DJANGO TEMPLATING/DJANGO TEMPLATE TAGS
+
+passing variables
+    -{{variableName}}
+logic on html
+    -{%logic here%}
+    examples
+        -extending an html page
+        {%extends 'html to extend'%}
+
+        -/template inheritance
+            {%block blockname%}
+
+            content hapa katikati
+
+            {%endblock%}
+
+
+
+
+
+        -looping through data on html
+        {%for iterationVAriable in iterable%}
+                {{iterationVariable}}
+        {%endfor%}
+        -conditional checks
+        {%if condition%}
+            content to display if condition is True
+        {%endif%}
+
+        {%if condition%}
+            content to display if condition is True
+        {%endif%}
+
+        {%elif condition 2%}
+            content to display if condition 2 is True
+        ....
+        {%else%}
+            content to display if all conditions are false
+        {%endif%}
+
+
+       -Including an html in another
+       {%include 'html to include'%}
+
+       -cross site request forgery
+       {%csrf_token%} prevents resending of the data thus no repetitive data
+
+ commenting django template tags
+   {# comment  #}
+
+html forms
+
+DJANGO FORMS
+    -Regular forms
+    -model forms
+""""
+Types of viewa
+    -function based view(FBV)
+        every function must have the parameter of request
+    -class based view(CBV)
+    -generic view-template
+
+    Form methods
+    post
+    get
+
+
+"""
+Retrieving data
+
+1.HAve the model you want to get data from imported in view.py
+2.Retrieving data methods
+modelName.objects.all()-retrieves all the data
+get_list_or_404(modelName,id)
+
+#retrieve filtered data
+modelName.objects.filter(column='sth')
+
+retrieve one object
+modelName.objects.get(id=1)-only used on unique data
+get_object_or_404(modelName,id)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
